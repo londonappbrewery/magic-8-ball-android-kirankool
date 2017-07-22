@@ -14,7 +14,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/askbutton"
+        android:id="@+id/askButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ball1"
-        android:layout_above="@+id/askbutton"
+        android:layout_above="@+id/askButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="45dp"
         tools:ignore="ContentDescription"/>

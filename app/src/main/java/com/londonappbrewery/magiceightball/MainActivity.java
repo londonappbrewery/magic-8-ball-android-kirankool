@@ -13,6 +13,11 @@ import static android.R.attr.button;
 import static android.R.attr.id;
 import static android.R.attr.onClick;
 import static android.R.attr.x;
+import static com.londonappbrewery.magiceightball.R.drawable.ball2;
+import static com.londonappbrewery.magiceightball.R.drawable.ball5;
+import static com.londonappbrewery.magiceightball.R.id.askButton;
+import static com.londonappbrewery.magiceightball.R.id.askButton;
+import static com.londonappbrewery.magiceightball.R.id.buttonPanel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,26 +25,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final ImageView ballDisplay;
 
-        ImageView balldisplay = (ImageView)findViewById(R.id.image_eightball);
 
-    int[] ballArray= {R.drawable.ball1,R.drawable.ball2,R.drawable.ball3,
-            R.drawable.ball4,R.drawable.ball5};
-        Button askbutton;
-        askbutton =(Button)findViewById(R.id.askbutton);
-        askbutton.setOnClickListener(new View.OnClickListener() {
+        ballDisplay = (ImageView) findViewById(R.id.image_eightball);
+
+        final int[] ballArray = {R.drawable.ball1,
+                R.drawable.ball2,
+                R.drawable.ball3,
+                R.drawable.ball4,
+                R.drawable.ball5};
+        Button askButton;
+        askButton = (Button) findViewById(R.id.askButton);
+        askButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Random randomNumberGenerator = new Random();
-                int number=randomNumberGenerator.nextInt();
-                number=randomNumberGenerator.nextInt();
-
+                int randomNumber = new Random().nextInt(5);
+                ballDisplay.setImageResource(ballArray[randomNumber]);
 
             }
 
+
         });
-
-
     }
 }
+
